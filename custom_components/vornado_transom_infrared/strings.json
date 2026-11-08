@@ -1,0 +1,131 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Vornado Transom (Infrared)",
+        "description": "Select the infrared emitter that points at the fan.",
+        "data": {
+          "infrared_entity_id": "Infrared emitter"
+        },
+        "data_description": {
+          "infrared_entity_id": "The infrared emitter entity used to send commands to the fan."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This infrared emitter is already used by a Vornado Transom.",
+      "no_infrared_entities": "No infrared emitters found. Set up an infrared emitter first.",
+      "emitter_not_in_registry": "The selected infrared emitter has no entity registry entry."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Vornado Transom (Infrared) options",
+        "data": {
+          "frames_per_press": "Frames per press",
+          "max_timings_per_payload": "Maximum timings per payload",
+          "throttle_interval": "Throttle interval"
+        },
+        "data_description": {
+          "frames_per_press": "How many times the remote's frame is repeated for each button press.",
+          "max_timings_per_payload": "Longest signal, in timings, the emitter can play in one command. Longer sequences are split.",
+          "throttle_interval": "Minimum time between sends to the fan. Changes made in between are combined. Set to 0 to disable."
+        }
+      }
+    },
+    "error": {
+      "payload_too_small": "Maximum timings per payload must hold at least two presses (2 x frames per press x 24)."
+    }
+  },
+  "entity": {
+    "select": {
+      "mode": {
+        "name": "Mode",
+        "state": {
+          "auto": "Auto",
+          "manual": "Manual"
+        }
+      }
+    },
+    "number": {
+      "setpoint": {
+        "name": "Setpoint"
+      }
+    },
+    "sensor": {
+      "assumed_speed": {
+        "name": "Assumed speed"
+      },
+      "assumed_direction": {
+        "name": "Assumed direction",
+        "state": {
+          "direct": "Direct",
+          "exhaust": "Exhaust"
+        }
+      },
+      "assumed_mode": {
+        "name": "Assumed mode",
+        "state": {
+          "auto": "Auto",
+          "manual": "Manual"
+        }
+      },
+      "assumed_setpoint": {
+        "name": "Assumed setpoint"
+      },
+      "last_command": {
+        "name": "Last command"
+      }
+    },
+    "binary_sensor": {
+      "assumed_power": {
+        "name": "Assumed power"
+      },
+      "assumed_idle": {
+        "name": "Assumed idle"
+      }
+    }
+  },
+  "selector": {
+    "direction": {
+      "options": {
+        "direct": "Direct",
+        "exhaust": "Exhaust"
+      }
+    }
+  },
+  "services": {
+    "set_assumed_state": {
+      "name": "Set assumed state",
+      "description": "Sets the state the integration assumes the fan is in, without sending anything to the fan. Use it to match the integration to the real fan. Fields left out keep their current assumed value.",
+      "fields": {
+        "power": {
+          "name": "Power",
+          "description": "Whether the fan is on."
+        },
+        "speed": {
+          "name": "Speed",
+          "description": "The fan speed, 1 to 4."
+        },
+        "direction": {
+          "name": "Direction",
+          "description": "The vent direction."
+        },
+        "auto": {
+          "name": "Auto",
+          "description": "Whether Auto (thermostat) mode is active."
+        },
+        "setpoint": {
+          "name": "Setpoint",
+          "description": "The Auto setpoint in °F, 60 to 90."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "emitter_not_in_registry": {
+      "message": "The infrared emitter is not in the entity registry."
+    }
+  }
+}

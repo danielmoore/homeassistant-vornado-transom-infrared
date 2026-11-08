@@ -1,0 +1,13 @@
+{
+  "domain": "vornado_transom_infrared",
+  "name": "Vornado Transom (Infrared)",
+  "codeowners": ["@danielmoore"],
+  "config_flow": true,
+  "dependencies": ["infrared"],
+  "documentation": "https://github.com/danielmoore/homeassistant-vornado-transom-infrared",
+  "integration_type": "device",
+  "iot_class": "assumed_state",
+  "issue_tracker": "https://github.com/danielmoore/homeassistant-vornado-transom-infrared/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

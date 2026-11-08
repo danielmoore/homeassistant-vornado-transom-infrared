@@ -1,0 +1,32 @@
+set_assumed_state:
+  target:
+    entity:
+      integration: vornado_transom_infrared
+      domain: fan
+  fields:
+    power:
+      selector:
+        boolean:
+    speed:
+      selector:
+        number:
+          min: 1
+          max: 4
+          mode: box
+    direction:
+      selector:
+        select:
+          options:
+            - direct
+            - exhaust
+          translation_key: direction
+    auto:
+      selector:
+        boolean:
+    setpoint:
+      selector:
+        number:
+          min: 60
+          max: 90
+          unit_of_measurement: "°F"
+          mode: box

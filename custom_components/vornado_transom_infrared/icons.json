@@ -1,0 +1,47 @@
+{
+  "entity": {
+    "select": {
+      "mode": {
+        "default": "mdi:thermostat-auto"
+      }
+    },
+    "number": {
+      "setpoint": {
+        "default": "mdi:thermometer"
+      }
+    },
+    "sensor": {
+      "assumed_speed": {
+        "default": "mdi:fan"
+      },
+      "assumed_direction": {
+        "default": "mdi:arrow-split-horizontal"
+      },
+      "assumed_mode": {
+        "default": "mdi:thermostat-auto"
+      },
+      "assumed_setpoint": {
+        "default": "mdi:thermometer-check"
+      },
+      "last_command": {
+        "default": "mdi:remote"
+      }
+    },
+    "binary_sensor": {
+      "assumed_power": {
+        "default": "mdi:power"
+      },
+      "assumed_idle": {
+        "default": "mdi:sleep",
+        "state": {
+          "off": "mdi:fan"
+        }
+      }
+    }
+  },
+  "services": {
+    "set_assumed_state": {
+      "service": "mdi:state-machine"
+    }
+  }
+}
