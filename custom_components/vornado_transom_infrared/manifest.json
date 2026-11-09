@@ -1,6 +1,7 @@
 {
   "domain": "vornado_transom_infrared",
   "name": "Vornado Transom (Infrared)",
+  "categories": ["climate.fans_ventilation"],
   "codeowners": ["@danielmoore"],
   "config_flow": true,
   "dependencies": ["infrared"],
