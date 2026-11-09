@@ -86,10 +86,10 @@ Decoding the FastLZ payload by hand reproduced Z2M's `learned_ir_timings` for th
 
 The checks above used direct Zigbee2MQTT sends. These cover the integration's own timings and payloads on the real fan.
 
-- [ ] Power on and off.
-- [ ] Every speed.
-- [ ] Direction.
-- [ ] Auto on and off.
-- [ ] Setpoint change across a split payload (for example 60 → 90).
-- [ ] Resync.
-- [ ] Wake + double Auto packed into one payload at 3 or fewer frames per press.
+- [x] Power on and off.
+- [x] Every speed.
+- [x] Direction.
+- [x] Auto on and off.
+- [x] Setpoint change across a split payload (for example 60 → 90).
+- [x] Resync.
+- [x] Wake + double Auto packed into one payload at 3 frames per press (216 timings): Auto turned off.
